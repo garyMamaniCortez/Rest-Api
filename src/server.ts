@@ -8,6 +8,7 @@ import cors from 'cors';
 import indexRoutes from './routes/indexRoutes';
 import PostRoutes from './routes/PostRoutes';
 import UserRoutes from './routes/UserRoutes';
+import LetterRoutes from './routes/LetterRoutes';
 
 class Server{
     public app: express.Application;
@@ -42,6 +43,7 @@ class Server{
         this.app.use(indexRoutes);
         this.app.use('/api/posts',PostRoutes);
         this.app.use('/api/users',UserRoutes);
+        this.app.use('/api/messages',LetterRoutes);
     }
 
     start(){
